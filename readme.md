@@ -32,3 +32,41 @@ Each measurement error parameter is expressed in terms of the ratio of the measu
 **shocksk** -- the measurement error parameter for physical capital savings, set by default to 0.1.
 
 **shocksh** -- the measurement error parameter for human capital savings, set by default to 0.1.
+
+**shockndg** -- the measurement error parameter for population and depreciation variable, set by default to 0.1.
+
+**errrho** -- the level of autocorrelation in measurement error terms across time periods, set by default to 0.1.
+
+#### Fixed effects correlation parameters
+
+The fixed effects correlation parameters take the correlations between the country fixed effects and the regressors observed from a fixed-effects regression on the observed data, and then multiplies those correlations by the inputted parameter for the generated data.
+
+**skfecorr** -- the correlation parameter between the physical capital savings variable and the generated fixed effects (data has 0.6395 average).
+
+**shfecorr** -- the correlation parameter between the human capital savings variable and the generated fixed effects (data has 0.8694 average).
+
+**ndgfecorr** -- the correlation parameter between the population and depreciation variable and the generated fixed effects (data has -0.5842 average).
+
+**yinifecorr** -- the correlation parameter between the initial income variable and the generated fixed effects (data has 0.9377 average).
+
+#### Use data quality estimates
+
+**dataqual** -- This parameter turns the use of the PWT data quality grades covaried with the observed data as a parameter in the generation of measurement error in the simulated data on and off.  1 = use data quality grades, 0 = use uniform measurement error parameters.
+
+#### Correlation between residual terms and regressors
+
+These correlation parameters introduce a correlation between the regressors and the generated residual terms (\nu_{i,t})
+
+**skerrcorr** -- the correlation parameter between the physical capital savings variable and the generated residual terms
+
+**sherrcorr** -- the correlation parameter between the human capital savings variable and the generated residual terms
+
+**ndgerrcorr** -- the correlation parameter between the population and depreciation variable and the generated residual terms
+
+#### Balanced or unbalanced data
+
+This line allows you to select a balanced or an unbalanced panel data set of true data used in the generation of Monte Carlo parameters
+
+MCdatabal is a 69 country dataset that has a balanced panel across all of the 8 time periods (552 total observations, 8 observations per country)
+
+MCdataunbal is a 112 country dataset that has an unbalanced panel across the 8 time periods (802 total observations, average of 7.2 observations per country)
